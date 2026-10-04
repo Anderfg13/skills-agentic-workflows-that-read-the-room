@@ -1,0 +1,39 @@
+---
+name: update-github-info
+description: Keep the GitHub Info page current with recent GitHub Blog and Changelog updates.
+on:
+  schedule: daily
+  workflow_dispatch:
+permissions:
+  contents: read
+engine: copilot
+tools:
+  edit:
+  web-fetch:
+  github:
+    toolsets: [repos]
+network:
+  allowed:
+    - github.blog
+    - github.com
+safe-outputs:
+  create-pull-request:
+    reviewers: [monalisa]
+    draft: true
+---
+
+# Update GitHub Info
+
+Keep `site/content/github-info.md` current for Mona's review.
+
+1. Read `notes/mona-notes.md`.
+2. Use the web-fetch tool to use the GitHub Blog and read the latest public updates from:
+   - https://github.blog/latest/
+3. Use the web-fetch tool to use the GitHub Changelog and read the latest release and product updates from:
+  - https://github.blog/changelog/
+4. Use the GitHub repository API tools to read repository guidance or reference files that are relevant to this update. Do not use terminal, CLI, or sandboxed shell commands for those reads.
+5. Update `site/content/github-info.md` with short, practical information that helps developers learn GitHub faster. Mention the source whenever an update comes from the GitHub Blog or GitHub Changelog.
+6. Make only focused, useful edits. Preserve the existing structure and style, and do not invent facts or sources.
+7. Use the `create-pull-request` safe output to create a draft pull request containing the changes for Mona to review. Summarize the updates and cite the source URLs in the pull request body.
+
+If there is nothing useful to update, do not modify files or open a pull request.
