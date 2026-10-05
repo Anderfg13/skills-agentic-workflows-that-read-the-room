@@ -8,9 +8,7 @@ permissions:
   contents: read
 engine:
   id: copilot
-  model: gpt-4o
-  env:
-    COPILOT_PROVIDER_WIRE_API: completions
+  model: gpt-4.1
 tools:
   edit:
   web-fetch:
