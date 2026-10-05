@@ -8,7 +8,7 @@ permissions:
   contents: read
 engine:
   id: copilot
-  model: gpt-5.2
+  model: copilot/gpt-5.2
 tools:
   edit:
   web-fetch:
