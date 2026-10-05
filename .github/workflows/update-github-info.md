@@ -6,7 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-engine: copilot
+engine:
+  id: copilot
+  model: gpt-5-mini
 tools:
   edit:
   web-fetch:
