@@ -16,6 +16,7 @@ network:
   allowed:
     - github.blog
     - github.com
+    - awesome-copilot.github.com
 safe-outputs:
   create-pull-request:
     reviewers: [monalisa]
@@ -31,9 +32,11 @@ Keep `site/content/github-info.md` current for Mona's review.
    - https://github.blog/latest/
 3. Use the web-fetch tool to use the GitHub Changelog and read the latest release and product updates from:
   - https://github.blog/changelog/
-4. Use the GitHub repository API tools to read repository guidance or reference files that are relevant to this update. Do not use terminal, CLI, or sandboxed shell commands for those reads.
-5. Update `site/content/github-info.md` with short, practical information that helps developers learn GitHub faster. Mention the source whenever an update comes from the GitHub Blog or GitHub Changelog.
-6. Make only focused, useful edits. Preserve the existing structure and style, and do not invent facts or sources.
-7. Use the `create-pull-request` safe output to create a draft pull request containing the changes for Mona to review. Summarize the updates and cite the source URLs in the pull request body.
+4. Use the web-fetch tool to read Awesome Copilot workflows from:
+   - https://awesome-copilot.github.com/workflows/
+5. Use the GitHub repository API tools to read repository guidance or reference files that are relevant to this update. Do not use terminal, CLI, or sandboxed shell commands for those reads.
+6. Update `site/content/github-info.md` with short, practical information that helps developers learn GitHub faster. Mention the source whenever an update comes from the GitHub Blog, GitHub Changelog, or Awesome Copilot workflows.
+7. Make only focused, useful edits. Preserve the existing structure and style, and do not invent facts or sources.
+8. Use the `create-pull-request` safe output to create a draft pull request containing the changes for Mona to review. Summarize the updates and cite the source URLs in the pull request body.
 
 If there is nothing useful to update, do not modify files or open a pull request.
